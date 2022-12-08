@@ -1,10 +1,9 @@
-
-/**
- * main - Entry Point
+#include <stdio.h>
+/*
+ * main - print of a line of code using parts
  * 
- * Return: Always 0 (Success)
+ * Return: 0
  */
-
 int main(void)
 {
 	puts("\"Programming is like building a multilinguil puzzle");
