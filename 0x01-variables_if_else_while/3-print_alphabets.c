@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
 /**
  * main - Entry point
@@ -14,15 +16,15 @@ int main(void)
 	c = 'a';
 	d = 'A';
 	while
-		(c <=  'z') {
+		(c <= 'z') {
 			putchar(c);
 			c++;
 		}
-	while 
+	while
 		(d <= 'z') {
 			putchar(d);
 			d++;
 		}
 	putchar('\n');
-	return(0);
+	return (0);
 }
