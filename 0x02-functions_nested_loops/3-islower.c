@@ -1,17 +1,13 @@
 #include <stdio.h>
 /**
- * main - print in lower and upper case
- *
- * Return: 0
+ *checking for lowercase character
+ *@c:single letter input
+ * Return 1 if int c is lowercase, o if otherwise
  */
-int main(void)
+int _islower(int c)
 {
-	char ch;
-
-	for (ch = 'a'; ch <= 'z' ch++)
-		putchar(ch);
-	for (ch = 'A'; ch <= 'Z' ch++)
-		putchar(ch);
-	putchar('\n');
-	return (0);
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	else
+		return (0);
 }
