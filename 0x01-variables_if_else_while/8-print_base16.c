@@ -5,7 +5,7 @@
  *
  */
 
-int main(void)
+int void main()
 {
 	char c;
 
