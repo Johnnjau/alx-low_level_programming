@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _puts_recursion - Prints a string followed by a new line
+ * _print_rev_recursion- Prints a string in reverse
  * @s: string
  * Return: On Success 1.
  * On error, -1 is returned, and errno is set appropriately.
