@@ -8,7 +8,7 @@
  * Return: if n == 0 - 0.
  * Otherwise - the sum of all parameters.
  */
-int sum_them_all(cost unsigned int n, ...)
+int sum_them_all(const unsigned int n, ...)
 {
 	va_list ap;
 	unsigned int i, sum = 0;
