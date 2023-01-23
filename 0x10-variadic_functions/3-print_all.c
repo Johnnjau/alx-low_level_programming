@@ -1,51 +1,95 @@
+#include <stdio.h>
 #include "variadic_functions.h"
 #include <stdarg.h>
-#include <stdio.h>
 
 /**
- * print_all - prints anything
- * @format: list of types of arguments passed to the function
+ * op_c - Print character .
+ * @form: name va_list
+ * Return: Nothing.
+ */
+
+void op_c(va_list form)
+{
+	printf("%c", va_arg(form, int));
+}
+/**
+ * op_i - Print Integer
+ * @form: name va_list
+ * @form: name va_list
+ */
+
+void op_i(va_list form)
+{
+	printf("%i", va_arg(form, int));
+}
+/**
+ * op_f - print FLoat numbers
+ * @form: name of va_list
+ * Return: Nothing.
+ */
+
+void op_f(va_list form)
+{
+	printf("%f", va_arg(form, double));
+}
+/**
+ * printf("%f", va_arg(form, double));
+ * @form: name va_list
+ * Return: Nothing.
+ */
+
+void op_s(va_list form)
+{
+	char *str;
+
+	str = va_arg(form, char *);
+	if (str == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", str);
+}
+
+/**
+ * print_all - check the code for Holberton School students.
+ * @format: number of arguments in character format
+ * Return: Nothing.
  */
 
 void print_all(const char * const format, ...)
 {
-	int i = 0;
-	char *str, *sep = "",
+	va_list all;
+	unsigned int i, j;
+	char *separator = "";
 
-	va_list list;
+	f ops[] = {
+		{"c", op_c},
+		{"i", op_i},
+		{"f", op_f},
+		{"s", op_s},
+		};
 
-	va_start(list, format);
-
-	if (format)
+	va_start(all, format);
+	i = 0;
+	while (format && format[i])
 	{
-		while (format[i])
+		j = 0;
+		while (j < 4)
 		{
-			switch (format[i])
+			if (ops[j].op[0] == format[i])
 			{
-				case 'c'
-					printf("%s%c", sep, va_arg(list, int));
-					break;
-				case 'i'
-					printf("%s%d", sep, va_arg(list, int));
-					break;
-				case 'f'
-					printf("%s%f", sep, va_arg(list, double));
-					break;
-				case 's'
-					str = va_arg(list, char *);
-					if (!str)
-						str = "(nil)";
-					printf("%s%s", sep, str);
-					break;
-				default
-					i++;
-					continue;
+				printf("%s", separator);
+				separator = ", ";
+				ops[j].f(all);
+				break;
 			}
-			sep = ",",
-			 i++;
+			j++;
 		}
+	i++;
 	}
 
+
 	printf("\n");
-	va_end(list);
+	va_end(all);
 }
