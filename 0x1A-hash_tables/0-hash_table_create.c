@@ -2,7 +2,6 @@
 #define HASH_TABLES_H
 
 #include <stdio.h>
-#include "main.h"
 #include "hash_tables.h"
 
 /**
