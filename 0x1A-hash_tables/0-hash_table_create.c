@@ -1,8 +1,4 @@
-#ifndef HASH_TABLE_H
-#define HASH_TABLES_H
-
-#include <stdio.h>
-#include "hash_tables.h"
+#include"hash_tables.h"
 
 /**
  * hash_table_create - Creates a hash table.
